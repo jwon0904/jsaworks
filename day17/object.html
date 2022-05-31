@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <script>
+        //substring(a,b) - a위치에서 시작해서 b-1까지 추출
+        //substring(a) - a위치 이후 끝까지 추출
+        let str1= "Javascript";
+        str = str1.substring(4, 9);
+        console.log(str1.substring(4,9));
+        console.log(str1.substring(4));
+
+        //split() - 구분기호로 분리되어 배열에 저장된다.
+        let str2 = "Javascript_JQuery";
+        let division = str2.split("_")
+        console.log(division);
+        console.log(division[0]);
+        console.log(division[1]);
+
+        let animal = "dog cat horse cow"
+        let animaIList = animal.split();
+        console.log(animaIList);
+
+        for(let i = 0; i< animaIList.length; i++){
+            document.write(animaIList[i] + " ")
+        }
+        for(let item in animaIList){
+            document.write(animaIList[item]+ " ");
+        }
+
+        //replace() - 특정 문자를 변경
+        let str3 = "Javascript";
+        console.log(str3.replace("Java", "jQuery"));
+
+        //trim() 함수 - 공백 제거
+        let str4 = "    Javascript";
+        console.log(str4.trim());
+
+        //toLowerCase() - 소문자, toUpperCase () - 대문자
+        let word = "Thank you!!";
+        console.log(word.toLowerCase());
+        console.log(word.toUpperCase());
+    </script>
+</body>
+</html>

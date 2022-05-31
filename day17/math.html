@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 객체의 함수</title>
+</head>
+<body>
+    <script>
+    console.log(Math.max(10,20))
+    console.log(Math.ceil(10.3))
+    console.log(Math.round(10.3))
+    console.log(Math.sqrt(81))
+    console.log(Math.pow(3, 3))
+
+    //절대값
+    console.log(Math.abs(-10));
+
+    //거듭제곱 정의
+    function myPow(x,y){
+        let num = 1;
+        
+        for(let i = 0; i<y; i++){
+            num *= x;
+         
+        }
+        return num;
+    }
+    /*
+    
+
+
+    */
+
+    //거듭제곱 호출
+    document.write(myPow(2, 3));
+ 
+
+
+    //사용자의 함수
+    function myAbs(x){
+        if(x>0){
+            return x;
+        }else{
+           return x*-1;
+        }
+    }
+    
+    //호출
+    console.log(myAbs(-10));
+
+    </script>
+</body>
+</html>
