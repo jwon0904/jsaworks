@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 5px;}
+        input[type="text"].on{
+            background: #f60;
+            color: #fff;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            //focus(),blur() 해당 요소에 이벤트 발생
+            $("#m1 input").focus(function(){
+                $(this).addClass("on")
+            }).blur(function(){
+                $(this).removeClass("on")
+            })
+
+            //focusin(), focus() - 해당요소나 자식요소에 이벤트
+            $("#m2").focusin(function(){
+                $(this).children().addClass("on");
+            }).focusout(function(){
+                $(this).children().removeClass("on");
+            });요.
+
+            //change() - 해당 요소의 값 변경 이벤트
+            $("#m3 input").change(function(){
+                let c = confirm("값을 바꾸시겠습니까");
+                if(!c){ //취소가 클릭된다면
+                    $(this).val(10); //값을 10으로 지정
+                }
+            });
+            //select() - 선택 요소의 값이 변경됐을때 이벤트
+            $("#m4 input").select(function(){
+              let v = $(this).val();
+              let size = v.length;
+              alert(v + " 총" + size + "문자를 선택하셨습니다.");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="m1">
+        <input type="text" placeholder="값을 입력하세요">
+    </div>
+    <div id="m2">
+        <input type="text" placeholder="값을 입력하세요">
+    </div>
+    <div id="m3">
+        <span>값을 수정한 후 다음 입력요소로 이동하세요.</span>
+        <input type="text" value="10">
+    </div>
+    <div id="m4">
+        <input type="text" value="텍스트를 드래하세요.">
+    </div>
+</body>
+</html>
